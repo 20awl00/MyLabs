@@ -31,19 +31,19 @@
          east.add(zero);
       /******************************************************************  2 */
          JButton negate = new JButton("Negate");
-         negate.setEnabled(false);
+         negate.addActionListener(new Listener_negate());
          east.add(negate);
       /******************************************************************  3 */
          JButton gray = new JButton("Grayscale");
-         gray.setEnabled(false);
+         gray.addActionListener(new Listener_gray());
          east.add(gray);
       /******************************************************************  4 */
          JButton sepia = new JButton("Sepia Tone");
-         sepia.setEnabled(false);
+         sepia.addActionListener(new Listener_sepia());
          east.add(sepia);
       /******************************************************************  5 */
          JButton blur = new JButton("Blur");
-         blur.setEnabled(false);
+         blur.addActionListener(new Listener_blur());
          east.add(blur);			
       /******************************************************************  6 */
          JButton posterize = new JButton("Posterize");
@@ -55,23 +55,23 @@
          east.add(splash);					
       /******************************************************************  8 */
          JButton mirrorLR = new JButton("Mirror Left-Right");
-         mirrorLR.setEnabled(false);
+         mirrorLR.addActionListener(new Listener_mirrorLR());
          east.add(mirrorLR);			
       /******************************************************************  9 */
          JButton mirrorUD = new JButton("Mirror Up-Down");
-         mirrorUD.setEnabled(false);
+         mirrorUD.addActionListener(new Listener_mirrorUD());
          east.add(mirrorUD);
       /****************************************************************** 10 */
          JButton flipLR = new JButton("Flip Left-Right");
-         flipLR.setEnabled(false);
+         flipLR.addActionListener(new Listener_flipLR());
          east.add(flipLR);
       /****************************************************************** 11 */
          JButton flipUD = new JButton("Flip Up-Down");
-         flipUD.setEnabled(false);
+         flipUD.addActionListener(new Listener_flipUD());
          east.add(flipUD);			
       /****************************************************************** 12 */
          JButton pixelate = new JButton("Pixelate");
-         pixelate.setEnabled(false);
+         pixelate.addActionListener(new Listener_pixelate());
          east.add(pixelate);			
       /****************************************************************** 13 */
          JButton sunsetize = new JButton("Sunsetize");
@@ -140,7 +140,78 @@
          }
       } 
    //  ---------->  add more Listeners here   <-----------
-   
+      private class Listener_negate implements ActionListener
+      {
+         public void actionPerformed(ActionEvent e)
+         {
+            display.negate();
+            update( display.getXval() , display.getYval() );
+         }
+      }
+      private class Listener_gray implements ActionListener
+      {
+         public void actionPerformed(ActionEvent e)
+         {
+            display.gray();
+            update( display.getXval() , display.getYval() );
+         }
+      }
+      private class Listener_sepia implements ActionListener
+      {
+         public void actionPerformed(ActionEvent e)
+         {
+            display.sepia();
+            update( display.getXval() , display.getYval() );
+         }
+      }
+      private class Listener_blur implements ActionListener
+      {
+         public void actionPerformed(ActionEvent e)
+         {
+            display.blur();
+            update( display.getXval() , display.getYval() );
+         }
+      }
+      private class Listener_mirrorLR implements ActionListener
+      {
+         public void actionPerformed(ActionEvent e)
+         {
+            display.mirrorLR();
+            update( display.getXval() , display.getYval() );
+         }
+      }
+      private class Listener_mirrorUD implements ActionListener
+      {
+         public void actionPerformed(ActionEvent e)
+         {
+            display.mirrorUD();
+            update( display.getXval() , display.getYval() );
+         }
+      }
+      private class Listener_flipLR implements ActionListener
+      {
+         public void actionPerformed(ActionEvent e)
+         {
+            display.flipLR();
+            update( display.getXval() , display.getYval() );
+         }
+      }
+      private class Listener_flipUD implements ActionListener
+      {
+         public void actionPerformed(ActionEvent e)
+         {
+            display.flipUD();
+            update( display.getXval() , display.getYval() );
+         }
+      }
+      private class Listener_pixelate implements ActionListener
+      {
+         public void actionPerformed(ActionEvent e)
+         {
+            display.pixelate();
+            update( display.getXval() , display.getYval() );
+         }
+      }
    
    
    

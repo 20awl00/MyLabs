@@ -62,8 +62,60 @@
       }
    //
    //    ------>  enter your methods below  <-----------
-   
-   
+      public void negate()
+      {
+         Color[][] tmp = pix.getArray( img );
+         pix.negate( tmp );
+         pix.setImage( img , tmp );
+      }
+      public void gray()
+      {
+         Color[][] tmp = pix.getArray( img );
+         pix.gray( tmp );
+         pix.setImage( img , tmp );
+      }
+      public void sepia()
+      {
+         Color[][] tmp = pix.getArray( img );
+         pix.sepia( tmp );
+         pix.setImage( img , tmp );
+      }
+      public void blur()
+      {
+         Color[][] tmp = pix.getArray( img );
+         pix.blur( tmp );
+         pix.setImage( img , tmp );
+      }
+      public void mirrorLR()
+      {
+         Color[][] tmp = pix.getArray( img );
+         pix.mirrorLR( tmp );
+         pix.setImage( img , tmp );
+      }
+      public void mirrorUD()
+      {
+         Color[][] tmp = pix.getArray( img );
+         pix.mirrorUD( tmp );
+         pix.setImage( img , tmp );
+      }
+      public void flipLR()
+      {
+         Color[][] tmp = pix.getArray( img );
+         pix.flipLR( tmp );
+         pix.setImage( img , tmp );
+      }
+      public void flipUD()
+      {
+         Color[][] tmp = pix.getArray( img );
+         pix.flipUD( tmp );
+         pix.setImage( img , tmp );
+      }
+      public void pixelate()
+      {
+         Color[][] tmp = pix.getArray( img );
+         pix.pixelate( tmp );
+         pix.setImage( img , tmp );
+      }
    
    
    
