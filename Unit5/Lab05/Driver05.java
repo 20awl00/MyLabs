@@ -1,7 +1,6 @@
-	//Name______________________________ Date_____________
 import java.io.*;      //the File class
 import java.util.*;    //the Scanner class
-public class Driver04
+public class Driver05
 {
    public static void main(String[] args) throws Exception
    {
@@ -14,10 +13,10 @@ public class Driver04
    {	
       Scanner infile = new Scanner( new File(filename) );
       int numitems = infile.nextInt();
-      Comparable[] array = new Weight[numitems];
+      Comparable[] array = new Distance[numitems];
       for(int k = 0; k < numitems; k++)
       {
-         Weight a = new Weight();
+         Distance a = new Distance();
          a.setPounds(infile.nextInt());
          a.setOunces(infile.nextInt());
          array[k] = a;
