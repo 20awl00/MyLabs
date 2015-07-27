@@ -107,11 +107,7 @@ public class Driver07
    }
    public static int search(Salesperson[] array, String name)
    {
-      	/************************/
-      	/*                      */
-      	/* Your code goes here. */
-      	/*                      */
-      	/************************/
+      for(int i = 0; i < array.length
    }
    public static void display(Salesperson[] array, Comparator c)
    {
