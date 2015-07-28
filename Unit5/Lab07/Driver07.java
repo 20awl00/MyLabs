@@ -88,35 +88,59 @@ public class Driver07
       {
          JOptionPane.showMessageDialog(null,"The file could not be created.");
       }
-       	/************************/
-      	/*                      */
-      	/* Your code goes here. */
-      	/*                      */
-      	/************************/
+       	outfile.println("" + array.length);
+         for(int i = 0; i < array.length; i++)
+         {
+            outfile.println("" + array[i].getName());
+            outfile.println("" + array[i].getCars());
+            outfile.println("" + array[i].getTrucks());
+         }
       outfile.close();
       System.out.println("Saved.");
    }
    public static void add(Salesperson[] array)
    {	
-   		/************************/
-      	/*                      */
-      	/* Your code goes here. */
-      	/*                      */
-      	/************************/
+      String s = JOptionPane.showInputDialog("What salesperson?");
+      String r = JOptionPane.showInputDialog("Cars or Trucks?");
+      String a = "Cars";
+      String b = "Trucks";
+      if(r.equals(a))
+      {
+         int c = Integer.parseInt(JOptionPane.showInputDialog("How many cars?"));
+         int i = search(array, s);
+         array[i].setName(s);
+         array[i].setCars(array[i].getCars()+c);
+         save(array);
+      }
+      if(r.equals(b))
+      {
+         int t = Integer.parseInt(JOptionPane.showInputDialog("How many trucks?"));
+         int i = search(array, s);
+         array[i].setTrucks(array[i].getTrucks()+t);
+         save(array);
+      }
       System.out.println("Sales added.");
    }
    public static int search(Salesperson[] array, String name)
    {
-      for(int i = 0; i < array.length
+      for(int i = 0; i < array.length; i++)
+      {
+         String s = array[i].getName();
+         String r = name;
+         if(s.equals(r))
+            return i;
+      }
+      return -1;
    }
    public static void display(Salesperson[] array, Comparator c)
    {
       sort(array, c);
-      	/************************/
-      	/*                      */
-      	/* Your code goes here. */
-      	/*                      */
-      	/************************/
+      System.out.println("Name\tCars\tTrucks\tTotal");
+      System.out.println("----------------------------");
+      for(int i = 0; i < array.length; i++)
+      {
+         System.out.println(array[i].getName() + "\t" + array[i].getCars() + "\t" + array[i].getTrucks() + "\t" + (array[i].getCars()+array[i].getTrucks()));
+      }
    }
    public static void sort(Object[] array, Comparator c)
    {
@@ -129,14 +153,21 @@ public class Driver07
    }
    public static int findMin(Object[] array, int upper, Comparator c)
    {
-     	
+      int minIndex = 0;
+      for(int index = 0; index < upper; index++)
+      {
+         if(c.compare(array[index], array[minIndex])< 0)
+         {
+            minIndex = index;
+         }
+         
+      }
+      return minIndex;
    }
    public static void swap(Object[] array, int a, int b)
    {
-      	/************************/
-      	/*                      */
-      	/* Your code goes here. */
-      	/*                      */
-      	/************************/
+      Object temp = array[a];
+      array[a] = array[b];
+      array[b] = temp;
    }
 }

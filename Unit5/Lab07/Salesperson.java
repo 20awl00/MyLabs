@@ -7,9 +7,10 @@
    
    	//constructors
    
-      public Salesperson(int x, int y)
+      public Salesperson(String name, int x, int y)
       {
-         myCares = x;
+         myName = name;
+         myCars = x;
          myTrucks = y;
       }
    
@@ -31,7 +32,14 @@
       {
          myTrucks = y;
       }
-   
+      public String getName()
+      {
+         return myName;
+      }
+      public void setName(String s)
+      {
+         myName = s;
+      }
    
    	//other methods: toString
    
