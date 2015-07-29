@@ -5,35 +5,59 @@
    {
      public static int power(int base, int exp)
       {
-         	/************************/
-         	/*                      */
-         	/* Your code goes here. */
-         	/*                      */
-         	/************************/
+         	if(exp == 0)
+            {
+               return 1;
+            }
+            if(exp == 1)
+            {
+               return base;
+            }
+            else
+            {
+               return base * power(base, exp - 1);
+            }
       }
        public static int factorial(int n)
       {
-         	/************************/
-         	/*                      */
-         	/* Your code goes here. */
-         	/*                      */
-         	/************************/
+         if(n == 1)
+         {
+            return 1;
+         }
+         else
+         {
+            return n * factorial(n - 1);
+         }
       }
        public static int fib(int n)
       {
-         	/************************/
-         	/*                      */
-         	/* Your code goes here. */
-         	/*                      */
-         	/************************/
+         if(n == 1)
+         {
+            return 1;
+         }
+         if(n == 2)
+         {
+            return 1;
+         }
+         else
+         {
+            return (fib(n - 1) + fib(n - 2));
+         }
       }
        public static int gcd(int a, int b)
       {
-         	/************************/
-         	/*                      */
-         	/* Your code goes here. */
-         	/*                      */
-         	/************************/
+         if(b % a == 0)
+         {
+            return a;
+         }
+         if(a % b == 0)
+         {
+            return b;
+         }
+         else
+         {
+            return gcd(b, a/b);
+         }
       }
        public static void main(String[] args)
       {

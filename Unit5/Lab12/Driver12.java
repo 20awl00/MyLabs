@@ -23,10 +23,17 @@
       }
       public static void foo(File f)
       {
-         	/************************/
-         	/*                      */
-         	/* Your code goes here. */
-         	/*                      */
-         	/************************/
+         	if(!f.isDirectory())
+            {
+               System.out.println(f.getPath());
+               return;
+            }
+            else
+            {
+               File[] directory = f.listFiles();
+               
+               for(int i = 0; i < directory.length; i++)
+                  foo(directory[i]);
+            }
       }
    }
