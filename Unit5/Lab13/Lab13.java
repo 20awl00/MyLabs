@@ -12,11 +12,16 @@
       
        public static void tower(int start, int finish, int helper, int number)
       {
-         /***************************/ 
-      	/*                         */
-         /* Your code goes here.    */
-         /*                         */
-         /***************************/
+         if(number == 0)
+         {
+            return;
+         }
+         else
+         {
+            tower(start, finish, helper, number - 1);
+            System.out.println("Move disk " + number + " from " + start + " to " + finish + ".");
+            tower(finish, helper, start, number - 1);
+         }
       }
    }
 	/**********************************
